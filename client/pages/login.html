@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Enter the Lands Between | Tarnished Ledger</title><link rel="icon" type="image/png" href="../assets/alexandernoBG.png"><link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="../theme.css"><link rel="stylesheet" href="../css/elden-theme.css"></head>
+<body data-page="login" data-theme="grace" data-region="limgrave">
+<div class="bg-scene" aria-hidden="true"></div><div class="bg-vignette" aria-hidden="true"></div><canvas id="region-canvas" aria-hidden="true"></canvas>
+<div id="startup-splash" class="splash-screen" role="dialog" aria-modal="true" aria-label="Introduction screen" tabindex="0">
+  <div class="splash-content">
+    <img class="splash-brand-logo" src="../assets/bandai-namco-logo.png" alt="Bandai Namco">
+  </div>
+</div>
+<main class="login-page page-enter">
+  <section class="login-card">
+    <div class="jar-logo-wrap"><img src="../assets/alexandernoBG.png" alt="Alexander the Warrior Jar" class="jar-logo"></div>
+    <p class="eyebrow">THE ROUNDTABLE HOLD</p>
+    <h1>Enter the Lands Between</h1>
+    <p class="login-copy">The ledger awaits, Tarnished. Take up your watch over the stores.</p>
+    <div class="login-rules"></div>
+    <form class="login-fields" data-login-form>
+      <div class="field"><label for="email">Bearer of the account</label><input id="email" type="email" placeholder="name@roundtable.com" autocomplete="username"></div>
+      <div class="field"><label for="password">Secret phrase</label><input id="password" type="password" placeholder="Enter your password" autocomplete="current-password"></div>
+      <button class="button button-gold login-submit" type="submit">Enter the Hold</button>
+    </form>
+    <p class="login-foot">A quiet flame marks the way · <a href="../index.html">Continue as guest</a></p>
+    <div class="login-rules" style="margin:19px 0 0"></div>
+  </section>
+</main>
+<script src="../app.js"></script>
+<script src="../theme.js"></script>
+<script src="../js/region-effects.js"></script>
+</body></html>

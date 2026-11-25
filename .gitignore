@@ -1,0 +1,13 @@
+# Dependencies and generated output
+**/node_modules/
+**/dist/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Logs and OS files
+npm-debug.log*
+Thumbs.db
+.DS_Store

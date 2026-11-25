@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Ledger of Deeds | Tarnished Ledger</title><link rel="icon" type="image/png" href="../assets/alexandernoBG.png"><link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="../theme.css"><link rel="stylesheet" href="../css/elden-theme.css"></head>
+<body data-page="history" data-theme="grace" data-region="farum-azula">
+<div class="bg-scene" aria-hidden="true"></div><div class="bg-vignette" aria-hidden="true"></div><canvas id="region-canvas" aria-hidden="true"></canvas>
+<div class="shell">
+  <aside class="sidebar">
+    <a class="brand" href="../index.html"><span class="jar-logo-wrap jar-logo-sidebar"><img src="../assets/alexandernoBG.png" alt="" class="jar-logo"></span><span><span class="brand-name">Tarnished Ledger</span><span class="brand-caption">Inventory chronicle</span></span></a>
+    <p class="nav-caption">The Roundtable</p>
+    <nav class="nav sidebar-nav" aria-label="Main navigation"><a class="region-btn btn-leyndell" href="../index.html"><span class="nav-icon">✧</span><span class="btn-label"><span class="btn-title">Dashboard</span><span class="btn-sub">Leyndell</span></span></a><a class="region-btn btn-lucaria" href="inventory.html"><span class="nav-icon">⚔</span><span class="btn-label"><span class="btn-title">Inventory</span><span class="btn-sub">Raya Lucaria</span></span></a><a class="region-btn btn-volcano" href="item-form.html"><span class="nav-icon">⚒</span><span class="btn-label"><span class="btn-title">Add / Edit Item</span><span class="btn-sub">Volcano Manor</span></span></a><a class="region-btn btn-farum active" aria-current="page" href="history-reports.html"><span class="nav-icon">◷</span><span class="btn-label"><span class="btn-title">Stock History</span><span class="btn-sub">Farum Azula</span></span></a><a class="region-btn btn-limgrave" href="login.html"><span class="nav-icon">↪</span><span class="btn-label"><span class="btn-title">Sign Out</span><span class="btn-sub">Limgrave</span></span></a></nav>
+    <div class="sidebar-bottom"><div class="sidebar-ornament"></div><div class="sidebar-note"><b>LEDGER OF DEEDS</b>Every receipt and dispatch is part of the record. Review the recent movement of your stores.</div><div class="user-mini"><div class="avatar">JD</div><div><strong>Jordan, Keeper</strong><span>Roundtable Hold</span></div></div></div>
+  </aside>
+  <main class="main page-enter">
+    <header class="topbar"><div class="breadcrumb">Roundtable Hold / <b>Ledger of Deeds</b></div><div class="top-actions"><span>25th day of the eleventh moon</span><span class="grace-mark">✧</span></div></header>
+    <section class="content">
+      <div class="title-row"><div><p class="eyebrow">CHRONICLE OF RECEIPTS &amp; DISPATCHES</p><h1>Ledger of Deeds</h1><p class="subtitle">A record of what entered the stores and what was sent forth.</p></div><button class="button button-gold" type="button" data-export-csv>↓ &nbsp; Export CSV</button></div>
+      <section class="ledger-summary" aria-label="Stock movement summary"><div class="ledger-stat"><small>Received this moon</small><b>1,246 units</b></div><div class="ledger-stat"><small>Dispatched this moon</small><b>986 units</b></div><div class="ledger-stat"><small>Net change</small><b>+260 units</b></div><div class="ledger-stat"><small>Stores valuation</small><b>₳ 84,290</b></div></section>
+      <section class="panel"><div class="panel-head"><div><h2>Chronological audit</h2><p>Recent movement, most recent first</p></div><span class="small-label">LAST 30 DAYS</span></div>
+        <div class="ledger-tools"><label class="search-box"><span aria-hidden="true">⌕</span><input type="search" placeholder="Search article or reference" aria-label="Search stock history" data-history-search></label><span class="small-label">5 records shown</span></div>
+        <div class="table-wrap"><table id="history-table"><thead><tr><th>Date</th><th>Article</th><th>Mark / SKU</th><th>Movement</th><th class="numeric">Count</th><th>Reference</th><th>Recorded by</th></tr></thead><tbody>
+          <tr class="ledger-row" data-history-row data-csv="2026-11-25,Wireless Keyboard,TEC-1182,IN,24,PO-2026-184,Jordan Davis"><td>Nov 25, 2026</td><td>Wireless Keyboard</td><td>TEC-1182</td><td><span class="movement movement-in"><span class="movement-mark">＋</span> INBOUND</span></td><td class="numeric">+24</td><td>PO-2026-184</td><td>Jordan Davis</td></tr>
+          <tr class="ledger-row" data-history-row data-csv="2026-11-24,Ceramic Coffee Mug,HOM-2048,OUT,6,SO-2026-922,Casey Morgan"><td>Nov 24, 2026</td><td>Ceramic Coffee Mug</td><td>HOM-2048</td><td><span class="movement movement-out"><span class="movement-mark">−</span> OUTBOUND</span></td><td class="numeric">−6</td><td>SO-2026-922</td><td>Casey Morgan</td></tr>
+          <tr class="ledger-row" data-history-row data-csv="2026-11-23,A5 Kraft Notebook,STA-0831,IN,50,PO-2026-179,Jordan Davis"><td>Nov 23, 2026</td><td>A5 Kraft Notebook</td><td>STA-0831</td><td><span class="movement movement-in"><span class="movement-mark">＋</span> INBOUND</span></td><td class="numeric">+50</td><td>PO-2026-179</td><td>Jordan Davis</td></tr>
+          <tr class="ledger-row" data-history-row data-csv="2026-11-22,Bluetooth Speaker,TEC-1405,OUT,3,SO-2026-918,Casey Morgan"><td>Nov 22, 2026</td><td>Bluetooth Speaker</td><td>TEC-1405</td><td><span class="movement movement-out"><span class="movement-mark">−</span> OUTBOUND</span></td><td class="numeric">−3</td><td>SO-2026-918</td><td>Casey Morgan</td></tr>
+          <tr class="ledger-row" data-history-row data-csv="2026-11-21,Desk Plant Pot,HOM-2610,IN,18,PO-2026-173,Jordan Davis"><td>Nov 21, 2026</td><td>Desk Plant Pot</td><td>HOM-2610</td><td><span class="movement movement-in"><span class="movement-mark">＋</span> INBOUND</span></td><td class="numeric">+18</td><td>PO-2026-173</td><td>Jordan Davis</td></tr>
+        </tbody></table></div><div class="table-footer"><span>Showing 5 of 1,932 movements</span><span>‹ &nbsp; 1 &nbsp; 2 &nbsp; 3 &nbsp; … &nbsp; 98 &nbsp; ›</span></div>
+      </section>
+      <div class="reports-grid">
+        <section class="panel"><div class="panel-head"><div><h2>Stores by article class</h2><p>Distribution of units in the inventory</p></div></div><div class="report-body"><div class="donut-wrap"><div class="donut"><div class="donut-center"><b>8,642</b><small>units held</small></div></div><div class="donut-legend"><span><i class="dot"></i>Household relics&nbsp; 53%</span><span><i class="dot blue"></i>Tools &amp; devices&nbsp; 25%</span><span><i class="dot ash"></i>Writing supplies&nbsp; 22%</span></div></div></div></section>
+        <section class="panel"><div class="panel-head"><div><h2>Inventory report</h2><p>Account as of this moon</p></div></div><div class="report-body"><div class="report-kpis"><div class="report-kpi"><span>Total articles</span><b>1,284</b></div><div class="report-kpi"><span>Article classes</span><b>12</b></div><div class="report-kpi"><span>Low stock</span><b style="color:var(--crimson-light)">18</b></div><div class="report-kpi"><span>Out of stock</span><b style="color:var(--crimson-light)">3</b></div></div></div></section>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="../app.js"></script>
+<script src="../theme.js"></script>
+<script src="../js/region-effects.js"></script>
+</body></html>

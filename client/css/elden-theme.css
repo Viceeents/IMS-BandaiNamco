@@ -1,0 +1,197 @@
+/* Day and Nokron image layers. All scenes are local files; no remote media. */
+body {
+  margin: 0;
+  min-height: 100vh;
+  isolation: isolate;
+  background: #090b0a;
+  transition: background-color .6s ease;
+}
+
+body[data-mode="nokron"] { background-color: #050811; }
+body[data-page][data-mode="nokron"] { background: #050811; }
+
+.bg-scene {
+  position: fixed;
+  z-index: -3;
+  inset: -4px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: .26;
+  filter: blur(2px) saturate(1.1);
+  transform: scale(1.04);
+  transition: opacity .6s ease;
+  pointer-events: none;
+}
+
+.bg-vignette {
+  position: fixed;
+  z-index: -2;
+  inset: 0;
+  background: radial-gradient(circle at 50% 45%,rgba(10,12,12,.25) 0%,rgba(5,7,9,.88) 100%);
+  pointer-events: none;
+}
+
+#region-canvas {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Regional day scenes */
+body[data-page="login"] .bg-scene { background-image: url("../assets/limgrave.jpg"); }
+body[data-page="dashboard"] .bg-scene { background-image: url("../assets/leyndell.jpg"); }
+body[data-page="inventory"] .bg-scene { background-image: url("../assets/lucaria.jpg"); }
+body[data-page="add-item"] .bg-scene { background-image: url("../assets/Volcano%20Manor.jpg"); }
+body[data-page="history"] .bg-scene { background-image: url("../assets/farum%20azula.jpg"); }
+
+/* Shared Nokron night scenes */
+body[data-mode="nokron"][data-page="login"] .bg-scene { background-image: url("../assets/nokron3.jpg"); }
+body[data-mode="nokron"][data-page="dashboard"] .bg-scene { background-image: url("../assets/nokron4.jpg"); }
+body[data-mode="nokron"][data-page="inventory"] .bg-scene { background-image: url("../assets/nokron2.jpg"); }
+body[data-mode="nokron"][data-page="add-item"] .bg-scene { background-image: url("../assets/nokron5.jpg"); }
+body[data-mode="nokron"][data-page="history"] .bg-scene { background-image: url("../assets/nokron1.jpg"); }
+
+body[data-page="login"] .login-page { background: transparent; }
+
+/* Contrast-safe surfaces and type for each bright regional scene. */
+body[data-page="login"] {
+  --card-bg: rgba(12,15,11,.88); --text-main: #f5f2e6; --text-muted: #c7c2ad; --accent: #e0b963;
+}
+body[data-page="dashboard"] {
+  --card-bg: rgba(18,14,9,.9); --text-main: #fbf6ea; --text-muted: #d6c8ad; --accent: #f2c96b;
+}
+body[data-page="inventory"] {
+  --card-bg: rgba(11,16,26,.88); --text-main: #f0f7ff; --text-muted: #b3c6db; --accent: #6cc8ff;
+}
+body[data-page="add-item"] {
+  --card-bg: rgba(20,11,10,.9); --text-main: #fcf2ee; --text-muted: #d9bbb2; --accent: #ff7a45;
+}
+body[data-page="history"] {
+  --card-bg: rgba(16,17,19,.92); --text-main: #f7f7f5; --text-muted: #c4c7cc; --accent: #e0d0a6;
+}
+body[data-mode="nokron"] {
+  --card-bg: rgba(7,11,22,.88); --text-main: #f2f7ff; --text-muted: #a9bfd9; --accent: #8cc8ff;
+}
+
+body[data-page] { color: var(--text-main); }
+body[data-page] .panel, body[data-page] .stat-card, body[data-page] .table-wrap,
+body[data-page] .hud, body[data-page] .ledger-summary {
+  border-color: rgba(255,255,255,.12);
+  border-top: 2px solid var(--accent);
+  background-color: var(--card-bg);
+  backdrop-filter: blur(8px);
+  color: var(--text-main);
+}
+body[data-page] .login-card {
+  border-color: var(--accent);
+  background: var(--card-bg);
+  color: var(--text-main);
+}
+body[data-page] .panel-head, body[data-page] .inventory-tools,
+body[data-page] .category-tabs, body[data-page] .ledger-tools { border-color: rgba(255,255,255,.12); }
+body[data-page] .title-row h1, body[data-page] .panel-head h2,
+body[data-page] .section-title, body[data-page] h1, body[data-page] h2, body[data-page] h3 {
+  color: var(--text-main);
+  text-shadow: 0 2px 10px rgba(0,0,0,.85);
+}
+body[data-page] .eyebrow, body[data-page] .text-link { color: var(--accent); }
+body[data-page] .hud-value, body[data-page] .ledger-stat b,
+body[data-page] .inspection-stat b, body[data-page] .preview-detail b,
+body[data-page] .stat-value { color: var(--text-main); }
+body[data-page] .subtitle, body[data-page] .panel-head p,
+body[data-page] .small-label, body[data-page] .hud-label,
+body[data-page] .hud-note, body[data-page] .ledger-stat small,
+body[data-page] .field label, body[data-page] .helper,
+body[data-page] .login-copy, body[data-page] .login-foot { color: var(--text-muted); }
+body[data-page] th { color: var(--text-muted); background: rgba(0,0,0,.24); }
+body[data-page] td { color: var(--text-main); border-color: rgba(255,255,255,.1); }
+body[data-page] .td-title, body[data-page] .item-row-name,
+body[data-page] .inspection-title h2, body[data-page] .preview-name,
+body[data-page] .alert-name b { color: var(--text-main); }
+body[data-page] .brand-name, body[data-page] .user-mini strong { color: var(--text-main); }
+body[data-page] .brand-caption, body[data-page] .user-mini span,
+body[data-page] .sidebar-note, body[data-page] .breadcrumb { color: var(--text-muted); }
+body[data-page] .inspection-description, body[data-page] .relic-detail,
+body[data-page] .preview-detail { color: var(--text-muted); }
+body[data-page] .field input, body[data-page] .field select, body[data-page] .field textarea,
+body[data-page] .quick-edit input { color: var(--text-main); }
+
+/* Region travel links: image at right, dark text-safe scrim at left. */
+.sidebar-nav { display: flex; flex-direction: column; gap: 9px; }
+.nav a.region-btn {
+  position: relative;
+  min-height: 55px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  overflow: hidden;
+  padding: 10px 12px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-left: 3px solid transparent;
+  border-radius: 4px;
+  color: #fff;
+  background: transparent;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+.nav a.region-btn:before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  width: auto;
+  height: auto;
+  border: 0;
+  background-size: cover;
+  background-position: center;
+  content: '';
+  opacity: 1;
+  transform: none;
+  transition: transform .35s ease, filter .35s ease;
+}
+.nav a.region-btn:after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(90deg,rgba(8,10,14,.96) 0%,rgba(8,10,14,.84) 55%,rgba(8,10,14,.36) 100%);
+  content: '';
+}
+.nav a.region-btn .nav-icon, .nav a.region-btn .btn-label { position: relative; z-index: 2; }
+.nav a.region-btn .nav-icon { flex: 0 0 18px; color: var(--btn-accent,#f2c96b); }
+.btn-label { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.btn-title { color: #fff; font-family: Cinzel,'Palatino Linotype',Georgia,serif; font-size: 10px; font-weight: 600; letter-spacing: .08em; }
+.btn-sub { color: #cbd5e1; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; }
+.nav a.region-btn:hover:before, .nav a.region-btn.active:before { transform: scale(1.06); filter: brightness(1); }
+.nav a.region-btn:hover, .nav a.region-btn.active {
+  border-color: rgba(255,255,255,.22);
+  border-left-color: var(--btn-accent,#f2c96b);
+  color: #fff;
+  background: transparent;
+  box-shadow: 0 4px 16px rgba(0,0,0,.55);
+}
+.btn-limgrave { --btn-accent: #e0b963; }
+.btn-limgrave:before { background-image: url("../assets/limgrave.jpg"); }
+.btn-leyndell { --btn-accent: #f2c96b; }
+.btn-leyndell:before { background-image: url("../assets/leyndell.jpg"); }
+.btn-lucaria { --btn-accent: #6cc8ff; }
+.btn-lucaria:before { background-image: url("../assets/lucaria.jpg"); }
+.btn-volcano { --btn-accent: #ff7a45; }
+.btn-volcano:before { background-image: url("../assets/Volcano%20Manor.jpg"); }
+.btn-farum { --btn-accent: #e0d0a6; }
+.btn-farum:before { background-image: url("../assets/farum%20azula.jpg"); }
+body[data-mode="nokron"] .btn-limgrave:before { background-image: url("../assets/nokron3.jpg"); }
+body[data-mode="nokron"] .btn-leyndell:before { background-image: url("../assets/nokron4.jpg"); }
+body[data-mode="nokron"] .btn-lucaria:before { background-image: url("../assets/nokron2.jpg"); }
+body[data-mode="nokron"] .btn-volcano:before { background-image: url("../assets/nokron5.jpg"); }
+body[data-mode="nokron"] .btn-farum:before { background-image: url("../assets/nokron1.jpg"); }
+body[data-mode="nokron"] .nav a.region-btn { --btn-accent: #8cc8ff; }
+
+body[data-page="dashboard"] .bg-scene,
+body[data-page="history"] .bg-scene { opacity: .22; filter: blur(2px) brightness(.75) saturate(1.1); }
+
+@media (prefers-reduced-motion:reduce) {
+  body, .bg-scene { transition: none; }
+}

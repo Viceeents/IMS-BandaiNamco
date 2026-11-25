@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Smithing Table | Tarnished Ledger</title><link rel="icon" type="image/png" href="../assets/alexandernoBG.png"><link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="../theme.css"><link rel="stylesheet" href="../css/elden-theme.css"></head>
+<body data-page="add-item" data-theme="grace" data-region="volcano-manor">
+<div class="bg-scene" aria-hidden="true"></div><div class="bg-vignette" aria-hidden="true"></div><canvas id="region-canvas" aria-hidden="true"></canvas>
+<div class="shell">
+  <aside class="sidebar">
+    <a class="brand" href="../index.html"><span class="jar-logo-wrap jar-logo-sidebar"><img src="../assets/alexandernoBG.png" alt="" class="jar-logo"></span><span><span class="brand-name">Tarnished Ledger</span><span class="brand-caption">Inventory chronicle</span></span></a>
+    <p class="nav-caption">The Roundtable</p>
+    <nav class="nav sidebar-nav" aria-label="Main navigation"><a class="region-btn btn-leyndell" href="../index.html"><span class="nav-icon">✧</span><span class="btn-label"><span class="btn-title">Dashboard</span><span class="btn-sub">Leyndell</span></span></a><a class="region-btn btn-lucaria" href="inventory.html"><span class="nav-icon">⚔</span><span class="btn-label"><span class="btn-title">Inventory</span><span class="btn-sub">Raya Lucaria</span></span></a><a class="region-btn btn-volcano active" aria-current="page" href="item-form.html"><span class="nav-icon">⚒</span><span class="btn-label"><span class="btn-title">Add / Edit Item</span><span class="btn-sub">Volcano Manor</span></span></a><a class="region-btn btn-farum" href="history-reports.html"><span class="nav-icon">◷</span><span class="btn-label"><span class="btn-title">Stock History</span><span class="btn-sub">Farum Azula</span></span></a><a class="region-btn btn-limgrave" href="login.html"><span class="nav-icon">↪</span><span class="btn-label"><span class="btn-title">Sign Out</span><span class="btn-sub">Limgrave</span></span></a></nav>
+    <div class="sidebar-bottom"><div class="sidebar-ornament"></div><div class="sidebar-note"><b>SMITHING TABLE</b>Set down the details of a new article. The preview updates as you shape its record.</div><div class="user-mini"><div class="avatar">JD</div><div><strong>Jordan, Keeper</strong><span>Roundtable Hold</span></div></div></div>
+  </aside>
+  <main class="main page-enter">
+    <header class="topbar"><div class="breadcrumb">Roundtable Hold / <a href="inventory.html">Equipment &amp; Pouch</a> / <b>Smithing Table</b></div><div class="top-actions"><span>25th day of the eleventh moon</span><span class="grace-mark">✧</span></div></header>
+    <section class="content">
+      <div class="title-row"><div><p class="eyebrow">RECORD AN ARTICLE</p><h1>Smithing Table</h1><p class="subtitle">Shape an inventory record and see its stat card take form.</p></div></div>
+      <div class="smithing-layout">
+        <form class="panel form-panel" data-item-form>
+          <h2 class="section-title">Article inscription</h2>
+          <div class="form-grid">
+            <div class="field"><label for="product-name">Item name</label><input id="product-name" name="name" data-preview="name" placeholder="e.g. Cerulean Flask" value="Ceramic Coffee Mug"></div>
+            <div class="field"><label for="sku">Mark / SKU</label><input id="sku" name="sku" data-preview="sku" placeholder="e.g. REL-0084" value="HOM-2048"></div>
+            <div class="field"><label for="category">Article class</label><select id="category" name="category" data-preview="category"><option>Household relic</option><option>Tool &amp; device</option><option>Writing supply</option><option>Other article</option></select></div>
+            <div class="field"><label for="supplier">Origin / supplier</label><select id="supplier" name="supplier"><option>Hearth &amp; Home Co.</option><option>Northstar Supply</option><option>Paper &amp; Pine</option><option>Greenhouse Goods</option></select></div>
+            <div class="field"><label for="quantity">Count in stores</label><div class="quantity-control"><button type="button" data-quantity-step="-1" aria-label="Decrease quantity">−</button><input id="quantity" name="quantity" data-preview="quantity" type="number" min="0" value="4"><button type="button" data-quantity-step="1" aria-label="Increase quantity">+</button></div><p class="helper">Units currently in inventory.</p></div>
+            <div class="field"><label for="price">Value per article</label><input id="price" name="price" data-preview="price" type="number" min="0" step="0.01" value="12.00" placeholder="0.00"><p class="helper">Unit price, in your chosen currency.</p></div>
+            <div class="field"><label for="reorder">Reorder mark</label><input id="reorder" name="reorder" data-preview="reorder" type="number" min="0" value="10"><p class="helper">Low-stock threshold for this article.</p></div>
+            <div class="field"><label for="unit">Unit of measure</label><select id="unit" name="unit"><option>Each</option><option>Box</option><option>Pack</option><option>Case</option></select></div>
+            <div class="field full"><label for="description">Inscription <span style="color:#777166">(optional description)</span></label><textarea id="description" name="description" placeholder="A short note about this article"></textarea></div>
+          </div>
+          <div class="form-actions"><a class="button button-muted" href="inventory.html">Back to pouch</a><button class="button button-gold" type="submit">✧ &nbsp; Set inscription</button></div>
+        </form>
+        <aside class="panel preview-panel" aria-live="polite"><div class="preview-topline"><h2 class="section-title" style="margin:0">Article preview</h2><span class="small-label">SMITHING RECORD</span></div><div class="preview-art" aria-hidden="true">♧</div><h3 class="preview-name" data-preview-output="name">Ceramic Coffee Mug</h3><p class="preview-sku" data-preview-output="sku">HOM-2048</p><div class="preview-details"><div class="preview-detail"><span>Class</span><b data-preview-output="category">Household relic</b></div><div class="preview-detail"><span>Count</span><b data-preview-output="quantity">4 units</b></div><div class="preview-detail"><span>Value</span><b data-preview-output="price">$12.00</b></div><div class="preview-detail"><span>Reorder mark</span><b data-preview-output="reorder">10 units</b></div></div><p class="helper" style="margin-top:13px">The card is a visual preview. Saving is not connected to a database.</p></aside>
+      </div>
+    </section>
+  </main>
+</div>
+<div class="toast-banner" role="status" aria-live="polite"><strong>STOCK UPDATED</strong></div>
+<script src="../app.js"></script>
+<script src="../theme.js"></script>
+<script src="../js/region-effects.js"></script>
+</body></html>
